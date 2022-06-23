@@ -1,0 +1,42 @@
+openapi: 3.0.2
+info:
+  title: Multipart Form Test API
+  description: Designed to specifically test multipart form handling.
+  contact:
+    name: Jason Dudek
+    url: https://engineering.brace.ai
+    email: jason@brace.ai
+  license:
+    name: Brace 1.0
+    url: http://brace.ai/licenses/LICENSE-1.0.html
+  version: 1.0.0
+servers:
+  - url: http://localhost/api
+    description: Localhost development
+paths:
+  /multipart:
+    post:
+      summary: Accepts multipart form uploads.
+      description: Accepts multipart form uploads.
+      operationId: post/multipart
+      requestBody:
+        content:
+          "multipart/form-data":
+            schema:
+              description: test upload
+              type: object
+              properties:
+                uploadName:
+                  type: string
+      responses:
+        "200":
+          description: Default success response.
+        default:
+          description: For all other responses
+  /simple:
+    get:
+      description: Returns a simple plain text response
+      operationId: simple
+      responses:
+        "200":
+          description: says 'success'
