@@ -31,7 +31,7 @@ public class TestMainVerticle
   }
 
   @Test
-  void verticle_deployed(Vertx vertx, VertxTestContext testContext)
+  void multipart_test(Vertx vertx, VertxTestContext testContext)
   {
     WebClient client = WebClient.create(vertx);
     Buffer buffer = Buffer.buffer("test payload");
